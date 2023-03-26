@@ -135,7 +135,7 @@ public class TemperaturaApp{
 		double resultado=0;
 		for(int i=0;i<ventana.getTDP().getTabla().getModelo().getRowCount();i++) {
 			resultado=converTemp.realizarConversion(ventana.getTDP().getCBXEscalas().getSelectedItem().toString(),ventana.getTDP().getTabla().getValueAt(i, 1).toString());
-			ventana.getTDP().getTabla().getModelo().setValueAt(formateador.formatear(resultado), i, 4);
+			ventana.getTDP().getTabla().getModelo().setValueAt(formateador.formatear(Double.toString(resultado)), i, 4);
 		}
 	}
 	

@@ -8,6 +8,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -59,6 +60,7 @@ public class TasaCambioApp {
 	}
 	
 	private void initComponents() {
+		formateador=new FormateadorDeNumero();
 		this.ventanaPrincipal=new ConversoresForm();
 		this.ventana=new TasaCambioForm();
 		this.api_manejo=new API_Manejo((JSONObject) api_codigoMonedas.getJSONObject().get("rates"),api_nombreMonedas.getJSONObject());
@@ -70,7 +72,6 @@ public class TasaCambioApp {
 		
 		setEncabezadoTabla();
 		llenarDatosTabla();
-		formateador=new FormateadorDeNumero();
 	}
 
 	public void iniciar() {
@@ -114,7 +115,7 @@ public class TasaCambioApp {
 			ventana.getTabla().getModelo().setValueAt(monedas.get(i).getNombre(), i, 1);
 			ventana.getTabla().getModelo().setValueAt(monedas.get(i).getCodigo(), i, 2);
 		}
-		setResultadoTabla(1,3);
+		setResultadoTabla(new BigDecimal(1),3);
 		vaciarResultTabla();
 	}
 	
@@ -124,8 +125,8 @@ public class TasaCambioApp {
 		}
 	}
 	
-	public void setResultadoTabla(double base,int column) {
-		double resultado;
+	public void setResultadoTabla(BigDecimal base,int column) {
+		BigDecimal resultado;
 		for(int i=0;i<ventana.getTabla().getModelo().getRowCount();i++) {
 			String name=ventana.getTabla().getModelo().getValueAt(i, 1).toString();
 			String codigo=ventana.getTabla().getModelo().getValueAt(i, 2).toString();
@@ -133,7 +134,7 @@ public class TasaCambioApp {
 			if(column==3) {
 				ventana.getTabla().getModelo().setValueAt(resultado, i, column);
 			}else if(column==4) {
-				ventana.getTabla().getModelo().setValueAt(formateador.formatear(resultado), i, column);
+				ventana.getTabla().getModelo().setValueAt(formateador.formatear(resultado.toString()), i, column);
 			}
 		}
 	}
@@ -147,7 +148,7 @@ public class TasaCambioApp {
 		return null;
 	}
 	
-	private double calcularConversion(String codName,double baseUser) {
+	private BigDecimal calcularConversion(String codName,BigDecimal baseUser) {
 		Moneda moneda=new Moneda();
 		moneda=buscarMonedaInfo(ventana.getConversionTC().getCBXBase().getSelectedItem().toString());
 		tasaCambio.setBase(moneda);
@@ -159,14 +160,14 @@ public class TasaCambioApp {
 	
 	private void realizarConversiones() {
 		setDivisaTxtField();
-		setResultadoTabla(Double.parseDouble(ventana.getConversionTC().getTXTBase().getText()),4);
+		setResultadoTabla(new BigDecimal(ventana.getConversionTC().getTXTBase().getText()),4);
 	}
 
 	//acciones relacionadas con frame tasa de cambio
 	
 	public void setDivisaTxtField() {
 		String resultado;
-		resultado=formateador.formatear(calcularConversion(ventana.getConversionTC().getCBXDivisa().getSelectedItem().toString(),Double.parseDouble(ventana.getConversionTC().getTXTBase().getText())));
+		resultado=formateador.formatear(calcularConversion(ventana.getConversionTC().getCBXDivisa().getSelectedItem().toString(),new BigDecimal(ventana.getConversionTC().getTXTBase().getText())).toString());
 		ventana.getConversionTC().getTXTDivisa().setText(resultado);
 	}
 	
@@ -225,7 +226,7 @@ public class TasaCambioApp {
 					realizarConversiones();
 				}
 				if(cbx==ventana.getConversionTC().getCBXBase()) {
-					setResultadoTabla(1,3);
+					setResultadoTabla(new BigDecimal(1),3);
 				}
 			}
 		});

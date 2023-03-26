@@ -16,6 +16,17 @@ public class Binario extends SistemaNumerico {
 		converTabla=new TablasDeConversion();
 	}
 	
+//	public String ADecimal() {
+//		int resultado=0;
+//		int num=Integer.parseInt(this.getValue());
+//		for(int i=0;i<this.getValue().length();i++) {
+//			resultado=(int) (num%10*Math.pow(this.getBase(), i)+resultado);
+//			num=num/10;
+//		}
+//		return Integer.toString(resultado);
+//	}
+	
+	
 	public String ADecimal() {
 		int resultado=0;
 		int num=Integer.parseInt(this.getValue());

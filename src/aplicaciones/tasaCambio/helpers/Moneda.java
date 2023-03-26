@@ -1,9 +1,11 @@
 package aplicaciones.tasaCambio.helpers;
 
+import java.math.BigDecimal;
+
 public class Moneda implements Comparable<Moneda> {
 	private String nombre;
 	private String codigo;
-	private double valor;
+	private BigDecimal valor;
 	
 	public String getNombre() {
 		return nombre;
@@ -19,10 +21,10 @@ public class Moneda implements Comparable<Moneda> {
 		this.codigo = codigo;
 	}
 	
-	public double getValor() {
+	public BigDecimal getValor() {
 		return valor;
 	}
-	public void setValor(double valor) {
+	public void setValor(BigDecimal valor) {
 		this.valor = valor;
 	}
 	

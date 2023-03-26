@@ -1,9 +1,11 @@
 package aplicaciones.tasaCambio.helpers;
 
+import java.math.BigDecimal;
+
 public class TasaCambio {
 	private Moneda base;
 	private Moneda divisa;
-	private double baseUser;
+	private BigDecimal baseUser;
 	
 	public TasaCambio() {
 		this.base=new Moneda();
@@ -26,15 +28,18 @@ public class TasaCambio {
 		return this.divisa;
 	}
 	
-	public void setBaseUser(double value) {
+	public void setBaseUser(BigDecimal value) {
 		this.baseUser=value;
 	}
 
-	public double getBaseUser() {
+	public BigDecimal getBaseUser() {
 		return this.baseUser;
 	}
 	
-	public double calcularDivisaResult() {
-		return baseUser*this.divisa.getValor()/this.base.getValor();
+	public BigDecimal calcularDivisaResult() {
+		double baseUsuario=baseUser.doubleValue();
+		double divi=divisa.getValor().doubleValue();
+		double bas=base.getValor().doubleValue();
+		return new BigDecimal(Double.toString(baseUsuario*divi/bas));
 	}
 }

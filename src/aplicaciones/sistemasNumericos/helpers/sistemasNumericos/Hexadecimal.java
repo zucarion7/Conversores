@@ -40,10 +40,10 @@ public class Hexadecimal extends SistemaNumerico {
 			else if(num.substring(num.length()-1).equals("D")) {
 				auxiliar=13;
 			}
-			else if(num.substring(num.length()-1).equals("F")) {
+			else if(num.substring(num.length()-1).equals("E")) {
 				auxiliar=14;
 			}
-			else if(num.substring(num.length()-1).equals("B")) {
+			else if(num.substring(num.length()-1).equals("F")) {
 				auxiliar=15;
 			}else {
 				auxiliar=Integer.parseInt(num.substring(num.length()-1));

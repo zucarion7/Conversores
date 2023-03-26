@@ -1,5 +1,6 @@
 package aplicaciones.tasaCambio.helpers;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import org.json.JSONObject;
@@ -21,7 +22,7 @@ public class API_Manejo {
 			try {
 				moneda.setNombre(respuestaNombres.getString(key));
 				moneda.setCodigo(key);
-				moneda.setValor(respuestaCodigos.getDouble(key));
+				moneda.setValor(new BigDecimal(Double.toString(respuestaCodigos.getDouble(key))));
 				convertido.add(moneda);
 			
 //			System.out.println(" codigo: "+moneda.getCodigo()+" valor: "+moneda.getValor()+" nombre:"+respuestaNombres.getString(key));
