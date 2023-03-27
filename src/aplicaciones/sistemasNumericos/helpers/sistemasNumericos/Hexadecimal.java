@@ -17,7 +17,7 @@ public class Hexadecimal extends SistemaNumerico {
 	}
 	
 	public String ADecimal() {
-		int resultado=0;
+		long resultado = 0;
 		int auxiliar=0;
 		int length=this.getValue().length();
 		String num;
@@ -48,11 +48,11 @@ public class Hexadecimal extends SistemaNumerico {
 			}else {
 				auxiliar=Integer.parseInt(num.substring(num.length()-1));
 			}
-			resultado=(int) (auxiliar*Math.pow(this.getBase(), i)+resultado);
+			resultado=(long) (auxiliar*Math.pow(this.getBase(), i)+resultado);
 			num=num.substring(0, num.length()-1);
 		}
 		if(this.getValue().contains("-")) resultado=resultado*(-1);
-		return Integer.toString(resultado);
+		return Long.toString(resultado);
 	}
 	
 	public String ABinario() {

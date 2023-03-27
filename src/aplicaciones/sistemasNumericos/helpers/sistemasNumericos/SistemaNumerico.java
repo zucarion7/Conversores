@@ -6,19 +6,19 @@ public class SistemaNumerico {
 	private String value;
 	
 	public String getNombre() {
-		return nombre;
+		return this.nombre;
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	public int getBase() {
-		return base;
+		return this.base;
 	}
 	public void setBase(int base) {
 		this.base = base;
 	}
 	public String getValue() {
-		return value;
+		return this.value;
 	}
 	public void setValue(String value) {
 		this.value = value;

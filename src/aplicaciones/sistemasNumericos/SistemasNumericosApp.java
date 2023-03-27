@@ -175,6 +175,13 @@ public class SistemasNumericosApp {
 		if(e.getKeyChar()!='-' && !Character.isDigit(e.getKeyChar())) e.consume();
 		
 		if(e.getKeyChar()=='-' && !ventana.getSNDP().getTxtNumero().getText().equals("")) e.consume();
+		
+		if(ventana.getSNDP().getTxtNumero().getText().contains("-") && ventana.getSNDP().getTxtNumero().getText().length()==19) {
+			e.consume();
+		}
+		else if(!ventana.getSNDP().getTxtNumero().getText().contains("-") && ventana.getSNDP().getTxtNumero().getText().length()==18) {
+			e.consume();
+		};
 	}
 
 	private void validacionBinario(KeyEvent e) {
@@ -184,6 +191,13 @@ public class SistemasNumericosApp {
 		if(Character.isDigit(e.getKeyChar()) && e.getKeyChar()>='2') e.consume();
 		
 		if(e.getKeyChar()=='-' && !ventana.getSNDP().getTxtNumero().getText().equals("")) e.consume();
+		
+		if(ventana.getSNDP().getTxtNumero().getText().contains("-") && ventana.getSNDP().getTxtNumero().getText().length()==20) {
+			e.consume();
+		}
+		else if(!ventana.getSNDP().getTxtNumero().getText().contains("-") && ventana.getSNDP().getTxtNumero().getText().length()==19) {
+			e.consume();
+		};
 	}
 
 	private void validacionOctal(KeyEvent e) {
@@ -193,12 +207,26 @@ public class SistemasNumericosApp {
 		if(Character.isDigit(e.getKeyChar()) && e.getKeyChar()>='8') e.consume();
 		
 		if(e.getKeyChar()=='-' && !ventana.getSNDP().getTxtNumero().getText().equals("")) e.consume();
+		
+		if(ventana.getSNDP().getTxtNumero().getText().contains("-") && ventana.getSNDP().getTxtNumero().getText().length()==20) {
+			e.consume();
+		}
+		else if(!ventana.getSNDP().getTxtNumero().getText().contains("-") && ventana.getSNDP().getTxtNumero().getText().length()==19) {
+			e.consume();
+		};
 	}
 
 	private void validacionHexadecimal(KeyEvent e) {
 		if(e.getKeyChar()=='-' && !ventana.getSNDP().getTxtNumero().getText().equals("")) e.consume();
 		
 		if(!Character.isDigit(e.getKeyChar()) && !Pattern.matches("[A-F-]",Character.toString(e.getKeyChar()))) e.consume();
+		
+		if(ventana.getSNDP().getTxtNumero().getText().contains("-") && ventana.getSNDP().getTxtNumero().getText().length()==16) {
+			e.consume();
+		}
+		else if(!ventana.getSNDP().getTxtNumero().getText().contains("-") && ventana.getSNDP().getTxtNumero().getText().length()==15) {
+			e.consume();
+		};
 		
 	}
 

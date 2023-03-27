@@ -164,6 +164,13 @@ public class TemperaturaApp{
 		if(e.getKeyChar()=='.' && (ventana.getTDP().getTxtTemperatura().getText().contains(".") || ventana.getTDP().getTxtTemperatura().getText().equals(""))) e.consume();
 		
 		if(e.getKeyChar()=='-' && !ventana.getTDP().getTxtTemperatura().getText().equals("")) e.consume();
+		
+		if(ventana.getTDP().getTxtTemperatura().getText().contains("-") && ventana.getTDP().getTxtTemperatura().getText().length()==16) {
+			e.consume();
+		}
+		else if(!ventana.getTDP().getTxtTemperatura().getText().contains("-") && ventana.getTDP().getTxtTemperatura().getText().length()==15) {
+			e.consume();
+		};
 	}
 	
 	private void addTxtKeyListener() {

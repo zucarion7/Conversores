@@ -185,6 +185,10 @@ public class TasaCambioApp {
 		if(e.getKeyChar()!='.' && !Character.isDigit(e.getKeyChar())) e.consume();
 		
 		if(e.getKeyChar()=='.' && (ventana.getConversionTC().getTXTBase().getText().contains(".") || ventana.getConversionTC().getTXTBase().getText().equals(""))) e.consume();
+		
+		if(ventana.getConversionTC().getTXTBase().getText().length()==15) {
+			e.consume();
+		};
 	}
 	
 	private void addCloseVentanaEvent() {

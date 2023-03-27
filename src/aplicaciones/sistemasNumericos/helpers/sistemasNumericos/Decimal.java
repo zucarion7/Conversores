@@ -14,12 +14,12 @@ public class Decimal extends SistemaNumerico {
 		String resultado="";
 		String num;
 		num=this.getValue().contains("-")?this.getValue().substring(1,this.getValue().length()):this.getValue();
-		resultado=division(Integer.parseInt(num),base);
+		resultado=division(Long.parseLong(num),base);
 		if(this.getValue().contains("-")) resultado="-"+resultado;
 		return resultado;
 	}
 	
-	public String division(int numero,int base) {
+	public String division(long numero,int base) {
 		String resultado = "";
 		if(numero/base!=0) {
 			resultado=division(numero/base,base)+numero%base+resultado;
@@ -31,8 +31,8 @@ public class Decimal extends SistemaNumerico {
 
 	public String AHexadecimal() {
 		String resultado="";
-		int num;
-		num=this.getValue().contains("-")? Integer.parseInt(this.getValue())*(-1):Integer.parseInt(this.getValue());
+		long num;
+		num=this.getValue().contains("-")? Long.parseLong(this.getValue())*(-1):Long.parseLong(this.getValue());
 		do{
 			if(num%16==10) {
 				resultado="A"+resultado;
