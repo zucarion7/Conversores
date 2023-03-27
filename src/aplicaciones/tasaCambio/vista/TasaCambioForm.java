@@ -1,6 +1,7 @@
 package aplicaciones.tasaCambio.vista;
 
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -79,7 +80,7 @@ public class TasaCambioForm extends ZFrame{
 		JScrollTabla.setOpaque(false);
 		
 		conversionTC=new ConversionTC();
-		formPanel.add(conversionTC,BorderLayout.CENTER);
+		formPanel.add(conversionTC);
 		
 		tabla = new Tabla();
 		
@@ -93,14 +94,18 @@ public class TasaCambioForm extends ZFrame{
 			public void componentResized(ComponentEvent e) {
 				int h=0;
 				int w=0;
-				if(getSize().width<1000) {
-					h=0;
+				if(getSize().width<1200) {
 					w=(contentPane.getWidth()-conversionTC.getWidth()-25)/2;
 					getCentralPanel().add(JScrollTabla,BorderLayout.SOUTH);
-				}else if(getSize().width>=1000) {
-					h=(contentPane.getHeight()-getFooter().getHeight()-getEncabezado().getHeight()-conversionTC.getHeight())/2;
+				}else if(getSize().width>=1200) {
 					w=(contentPane.getWidth()-600-conversionTC.getWidth())/2;
 					getCentralPanel().add(JScrollTabla,BorderLayout.EAST);
+				}
+				if(getSize().height>400 &&  getSize().height<550) {
+					h=(contentPane.getHeight()-getEncabezado().getHeight()-conversionTC.getHeight())/2;
+				}
+				else if(getSize().height>=550) {
+					h=(contentPane.getHeight()-getFooter().getHeight()-getEncabezado().getHeight()-conversionTC.getHeight())/2;
 				}
 				conversionTC.setBounds(w,h,560,250);
 			}
