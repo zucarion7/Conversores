@@ -99,13 +99,8 @@ public class TasaCambioForm extends ZFrame{
 					getCentralPanel().add(JScrollTabla,BorderLayout.SOUTH);
 				}else if(getSize().width>=1200) {
 					w=(contentPane.getWidth()-600-conversionTC.getWidth())/2;
+					h=70;
 					getCentralPanel().add(JScrollTabla,BorderLayout.EAST);
-				}
-				if(getSize().height>400 &&  getSize().height<550) {
-					h=(contentPane.getHeight()-getEncabezado().getHeight()-conversionTC.getHeight())/2;
-				}
-				else if(getSize().height>=550) {
-					h=(contentPane.getHeight()-getFooter().getHeight()-getEncabezado().getHeight()-conversionTC.getHeight())/2;
 				}
 				conversionTC.setBounds(w,h,560,250);
 			}
