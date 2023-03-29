@@ -62,10 +62,10 @@ public class Hexadecimal extends SistemaNumerico {
 			resultado=converTabla.tablaABinario(auxiliar.substring(auxiliar.length()-1,auxiliar.length()))+resultado;
 			auxiliar=auxiliar.substring(0,auxiliar.length()-1);
 		}
-		while(resultado.substring(0,1).equals("0")) {
+		while(resultado.substring(0,1).equals("0") && resultado.length()>1) {
 			resultado=resultado.substring(1,resultado.length());
 		}
-		if(this.getValue().contains("-"))resultado="-"+resultado;
+		if(this.getValue().contains("-") && !resultado.equals("0"))resultado="-"+resultado;
 		return resultado;
 	}
 	

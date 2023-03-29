@@ -43,7 +43,7 @@ public class InteraccionPanel extends JPanel {
 		opcionesCBX = new JComboBox<String>();
 		opcionesCBX.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		opcionesCBX.setBounds(130, 70, 30, 22);
-		opcionesCBX.setSize(230, 30);
+		opcionesCBX.setSize(250, 30);
 		opcionesCBX.setBackground(new Color(0,0,0));
 		opcionesCBX.setForeground(new Color(250,250,250));
 		opcionesCBX.setBorder(BorderFactory.createLineBorder(new Color(53,56,61)));

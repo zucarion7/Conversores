@@ -15,7 +15,7 @@ public class Decimal extends SistemaNumerico {
 		String num;
 		num=this.getValue().contains("-")?this.getValue().substring(1,this.getValue().length()):this.getValue();
 		resultado=division(Long.parseLong(num),base);
-		if(this.getValue().contains("-")) resultado="-"+resultado;
+		if(this.getValue().contains("-") && !resultado.equals("0")) resultado="-"+resultado;
 		return resultado;
 	}
 	
@@ -56,7 +56,7 @@ public class Decimal extends SistemaNumerico {
 			}
 			num=num/16;
 		}while(num!=0);
-		if(this.getValue().contains("-"))resultado="-"+resultado;
+		if(this.getValue().contains("-") && !resultado.equals("0"))resultado="-"+resultado;
 		return resultado;
 	}
 	
