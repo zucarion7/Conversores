@@ -47,7 +47,7 @@ public class SNControlTextField {
 
 			@Override
 			public void keyTyped(KeyEvent e) {
-				validador.validarTecla(e,txt.getText(),controlCbx.getSelectedItemString());
+				validador.validarTecla(e,txt,controlCbx.getSelectedItemString());
 			}
 
 			@Override

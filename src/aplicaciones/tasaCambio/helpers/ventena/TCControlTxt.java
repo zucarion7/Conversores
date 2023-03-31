@@ -48,7 +48,7 @@ public class TCControlTxt {
 
 			@Override
 			public void keyTyped(KeyEvent e) {
-				validador.validarTecla(e,getBaseValueString());
+				validador.validarTecla(e,txtBase);
 			}
 
 			@Override

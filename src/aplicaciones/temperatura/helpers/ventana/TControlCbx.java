@@ -51,8 +51,8 @@ public class TControlCbx {
 		cbx.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				controlTabla.setFormulasTabla(controlResultados.recolectarFormulas());
-				if(!controlTxt.getItemValueString().equals("")) {
-					controlResultados.setValueTemp(getSelectedItemString(), Double.parseDouble(controlTxt.getItemValueString()));
+				if(!controlTxt.getTxtValueString().equals("") && !controlTxt.getTxtValueString().equals("-")) {
+					controlResultados.setValueTemp(getSelectedItemString(), Double.parseDouble(controlTxt.getTxtValueString()));
 					controlTabla.setResultadoTabla(controlResultados.recolectar());
 				}
 			}

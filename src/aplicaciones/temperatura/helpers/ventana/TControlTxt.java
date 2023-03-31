@@ -46,7 +46,7 @@ public class TControlTxt {
 		this.txt.setText("");
 	}
 	
-	public String getItemValueString() {
+	public String getTxtValueString() {
 		return txt.getText();
 	}
 	
@@ -55,7 +55,7 @@ public class TControlTxt {
 
 			@Override
 			public void keyTyped(KeyEvent e) {
-				validador.validarTecla(e,txt.getText());
+				validador.validarTecla(e,txt);
 			}
 
 			@Override
