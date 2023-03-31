@@ -128,3 +128,15 @@ Aplicación de conversiones.
 </p>
 
 <h2> Redes </h2>
+
+<a href="https://github.com/zucarion7" target="_BLANK">
+  <img widht="70" height="70" src="https://user-images.githubusercontent.com/101782933/229203774-0bc9b976-0788-41a2-87af-1d4e819aa943.png">
+ </a>
+
+<a href="https://www.instagram.com/zucarion7/" target="_BLANK">
+  <img widht="60" height="60" src="https://user-images.githubusercontent.com/101782933/229204673-7260f3c5-d6f3-4ff5-96a8-686dacde5557.png">
+ </a>
+
+<a href="https://www.linkedin.com/in/zucarion7/" target="_BLANK">
+  <img widht="70" height="70" src="https://user-images.githubusercontent.com/101782933/229201751-ddd8422a-5f33-4ea1-946f-2d06a2effa7a.png">
+ </a>
