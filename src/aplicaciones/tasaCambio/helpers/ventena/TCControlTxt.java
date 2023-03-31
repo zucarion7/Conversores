@@ -26,8 +26,8 @@ public class TCControlTxt {
 		this.controlTabla=ct;
 	}
 	
-	public void setConversion(TCConversion conver) {
-		this.conversor=conver;
+	public void setConversion(TCConversion conversor) {
+		this.conversor=conversor;
 	}
 	
 	public void iniciar() {

@@ -21,8 +21,8 @@ public class TControlTxt {
 		this.txt=txt;
 	}
 	
-	public void setControlTabla(TControlTabla controlTabla) {
-		this.controlTabla=controlTabla;
+	public void setControlTabla(TControlTabla ct) {
+		this.controlTabla=ct;
 	}
 	
 	public void setControlCombobox(TControlCbx controlCbx) {

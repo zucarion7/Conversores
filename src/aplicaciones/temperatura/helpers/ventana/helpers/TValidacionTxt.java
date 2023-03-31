@@ -22,7 +22,6 @@ public class TValidacionTxt {
 		
 		if(txtField.getSelectedText()!=null) {
 			if(e.getKeyChar()=='.' && txtField.getSelectedText().toString().equals(txt)) e.consume();
-			
 			if(e.getKeyChar()=='-' && !txtField.getSelectedText().toString().equals(txt)) e.consume();
 		}else {
 			if(e.getKeyChar()=='-' && !txt.equals("")) e.consume();

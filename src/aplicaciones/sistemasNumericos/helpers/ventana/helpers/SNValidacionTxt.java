@@ -9,7 +9,6 @@ public class SNValidacionTxt {
 
 	
 	public void validarTecla(KeyEvent e,JTextField txtField,String sNumerico) {
-		
 		if(sNumerico.equals("Decimal")) {
 			validacionDecimal(e,txtField);
 		}
@@ -22,7 +21,6 @@ public class SNValidacionTxt {
 		else if(sNumerico.equals("Hexadecimal")) {
 			validacionHexadecimal(e,txtField);
 		}
-		
 	}
 
 	private void validacionDecimal(KeyEvent e,JTextField txtField) {
@@ -44,7 +42,6 @@ public class SNValidacionTxt {
 	}
 	
 	private void validacionBinario(KeyEvent e,JTextField txtField) {
-		
 		String txt=txtField.getText().toString();
 		
 		if(e.getKeyChar()!='-' && !Character.isDigit(e.getKeyChar())) e.consume();

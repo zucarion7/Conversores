@@ -20,8 +20,8 @@ public class SNControlTextField {
 		this.txt=txt;
 	}
 	
-	public void setControlTabla(SNControlTabla controlTabla) {
-		this.controlTabla=controlTabla;
+	public void setControlTabla(SNControlTabla ct) {
+		this.controlTabla=ct;
 	}
 	
 	public void setControlCombobox(SNControlCombobox controlCbx) {
