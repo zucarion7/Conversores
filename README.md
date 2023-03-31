@@ -2,12 +2,19 @@
 Aplicación de conversiones.
 
 <h2> Descripción </h2>
-Aplicación que permite elegir entre tres diferentes conversores permitiendo
-calculos rapidos y precisos
+<p>
+  Aplicación que permite elegir entre tres diferentes conversores permitiendo
+  calculos rapidos y precisos
+  
+  Aunque son conversores parecidos, cada uno realiza su conversión de una manera diferente.
+  
+</p>
 
 <h2> Explicación y demostración </h2>
 
-La aplicación inicia con una ventana controladora.
+<p>
+  La aplicación inicia con una ventana controladora.
+</p>
 
 ![image](https://user-images.githubusercontent.com/101782933/229003155-7e1d29ce-0123-499c-909f-1d88d99c2dd7.png)
 
@@ -38,39 +45,81 @@ La aplicación inicia con una ventana controladora.
 
 ![image](https://user-images.githubusercontent.com/101782933/229026201-daefc95c-4c9e-44c2-be68-0fa114742ff5.png)
 
-El conversor de monedas permite realizar los calculos rapidamente de 158 monedas diferentes redondeando a dos
-cifras decimales. Aunque no permite el ingreso de numeros negativos, permite el ingreso de numeros decimales.
+<p>  
+  Este conversor cuenta con las siguientes caracteristicas:
 
-En la ventana encontramos dos combobox con los cuales podemos indicar dos monedas. El primer combobox
-nos indica desde que moneda se realizará la conversión y el segundo combobox nos indica hacia cual moneda
-queremos realizar dicha conversión.
+  - Calculos automaticos a medida que se escribe en el campo de texto.
+  - Uso de API https://api.exchangerate-api.com/v4/latest/COP para obtención de los
+  rates y código de las monedas
+  - Uso de API https://openexchangerates.org/api/currencies.json para obtención de
+  los nombres de las monedas (en inglés)
+  - Los resultados se muestran en la tabla y en un segundo campo de texto.
+  - El segundo campo de texto es de solo lectura.
+  - Boton de intercambio de valor de los combobox.
+  - Al dar doble click en una fila de la tabla, desplegará una ventana extra con la
+  información contenida en dicha fila.
+  - Cantidad de cifras permitidas dentro del primer campo de texto a un maximo de 15.
+  - El conversor de monedas permite realizar los calculos rapidamente de 158 monedas diferentes.
+  - Resultados redondeados a dos cifras decimales.
+  - No permite el ingreso de numeros negativos, letras o simbolos.
+  - Permite el ingreso de numeros decimales.
+  - La cuarta columna de la tabla muestra la tasa de cambio con la que podemos calcular la conversión
+  entre la moneda seleccionada en el primer combobox y la moneda perteneciente a la fila que
+  contiene dicha tasa de cambio
+</p>
 
-Tambien encontramos dos campos de texto. El primer campo de texto es el campo que nos permitirá ingresar el valor a
-convertir. Para mayor experiencia del usuario y evitar la preocupación de ingresar letras o simbolos, este campo
-desechará cualquier letra o simbolo que se escriba permitiendo asi solo el ingreso de numeros. Para el ingreso de numeros
-decimales, se utilizará el punto. Se restringio su ingreso solo si el campo de texto 
-posee algún numero. Al ingresar datos en este combobox, las conversiones se haran automaticamente.
+![4](https://user-images.githubusercontent.com/101782933/229081986-951473d6-071a-41e4-ac8d-606ad475b529.gif)
 
-el campo de texto dos es de solo lectura y en el se escribirá automaticamente la conversión realizada desde la moneda seleccionada
-por el combobox uno hacia la moneda seleccionada en el combobox.
+<h2> Conversor de temperatura 🌡️</h2>
 
-tambien encontramos dos etiquetas que indican en que fila de la tabla podemos encontrar la moneda seleccionada en su respectivo
-combobox.
+![image](https://user-images.githubusercontent.com/101782933/229082784-689b5dd9-6f44-438e-b4f0-1df8716e5cdf.png)
+
+<p>
+  El funcionamiento viene siendo similar al de "Tasa de cambio de divisas" y podemos verlo en el siguiente gif
+</p>
+
+![5](https://user-images.githubusercontent.com/101782933/229084806-aa1162ca-ae0a-485c-bcf7-4e526fe182d1.gif)
+
+<p>
+  Las caracteristicas de este conversor son:
+  - Calculos automaticos a medida que se escribe en el campo de texto.
+  - Los resultados se muestran en la tabla.
+  - Al dar doble click en una fila de la tabla, desplegará una ventana extra con la
+  información contenida en dicha fila.
+  - Cantidad de cifras permitidas dentro del campo de texto a un maximo de 15 (16 si es un numero negativo).
+  - Resultados redondeados a dos cifras decimales.
+  - No permite el ingreso de letras o simbolos.
+  - Permite el ingreso de numeros decimales y numeros negativos.
+  - En la tabla encontramos la formula empleada para realizar la conversión.
+</p>
 
 
+<h2> Conversor de sistemas numéricos 🔢</h2>
 
-Entre los combobox encontramos un boton que permite intercambiar la moneda desde la que se hará la conversión y la moneda hacia la
-cual se hará la conversión.
+![6](https://user-images.githubusercontent.com/101782933/229086540-11292fa2-0c88-44e0-a472-37e6c91d8f81.gif)
 
-La tabla posee cinco columnas. La primera columna nos permite tener un conteo de monedas y facilidad para encontrar las monedas
-seleccionadas en los combobox.
+<p>
+  Las caracteristicas de este conversor son:
+  - Calculos automaticos a medida que se escribe en el campo de texto.
+  - Los resultados se muestran en la tabla.
+  - Al dar doble click en una fila de la tabla, desplegará una ventana extra con la
+  información contenida en dicha fila.
+  - Cantidad de cifras permitidas dentro del campo de texto (dependiendo del sistema numérico seleccionado)
+  - Permite el ingreso de numeros negativos.
+</p>
 
-La segunda columna nos dice el nombre de la moneda en inglés.
+<p>
+  Para este conversor, fue necesario limitar los valores ingresados al campo de texto dependiendo 
+  al sistema numerico seleccionado. 
+  
+  - El sistema binario por su parte, esta compuesta por "1" y "0".
+  - El sistema octal por su parte, esta compuesto por cifras que van del "0" al "7"
+  - Por otro lado, el sistema hexadecimal, debia permitir el acceso de los numeros y letras.
+  (dentro de la aplicación se podran usar las letras "A" "B" "C" "D" "E" "F" en mayuscula)
+  
+</p>
 
-La tercera columna nos dice el código de tres letras de la moneda.
+<h2> Tecnologías utilizadas </h2>
 
-La cuarta columna nos dice la tasa con la que podemos calcular la conversión de la moneda seleccionada en el combobox uno
-hacia la moneda que se encuentra en la tabla.
-
-La quinta columna nos arroja el valor de la conversión realizada desde la moneda seleccionada en el combobox uno hacia la
-moneda en la tabla.
+- La aplicación esta construida en el lenguaje java
+- Se utilizo la libreria javax.swing para la 
