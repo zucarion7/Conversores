@@ -119,7 +119,12 @@ Aplicación de conversiones.
   
 </p>
 
-<h2> Tecnologías utilizadas </h2>
+<h2> Tecnologías utilizadas 💻</h2>
 
-- La aplicación esta construida en el lenguaje java
-- Se utilizo la libreria javax.swing para la 
+<p>
+  - La aplicación esta construida en el lenguaje java.
+  - Se utilizó la libreria javax.swing para la construcción de las interfaces graficas.
+  - Clase BigDecimal para realizar los calculos grandes y precisos.
+</p>
+
+<h2> Redes </h2>
