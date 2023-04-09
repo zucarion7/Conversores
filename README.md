@@ -129,6 +129,7 @@
 <h2> Tecnologías utilizadas 💻</h2>
 
 <p>
+  
   - La aplicación esta construida en el lenguaje java.
   - Se utilizó la libreria javax.swing para la construcción de las interfaces graficas.
   - Clase BigDecimal para realizar los calculos grandes y precisos.
