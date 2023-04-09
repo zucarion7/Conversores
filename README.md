@@ -87,6 +87,7 @@
 
 <p>
   Las caracteristicas de este conversor son:
+  
   - Calculos automaticos a medida que se escribe en el campo de texto.
   - Los resultados se muestran en la tabla.
   - Al dar doble click en una fila de la tabla, desplegará una ventana extra con la
