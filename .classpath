@@ -6,6 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/zucarion7/Desktop/proyectos/aprendizaje/Aprendizaje-programacion/ONE - ORACLE Next Education/challenge/conversores - challenge 2/dependenciaJSON/json-20220320.jar" sourcepath="C:/Users/zucarion7/Desktop/Pendiente/Programando/ONE - ORACLE Next Education/challenge/conversores - challenge 2/dependenciaJSON/json-20220320.jar"/>
+	<classpathentry kind="lib" path="C:/Users/zucarion7/Desktop/proyectos/aprendizaje/Aprendizaje-programacion/ONE - ORACLE Next Education/challenge/conversores - challenge 2/dependencias/json-20220320.jar" sourcepath="C:/Users/zucarion7/Desktop/Pendiente/Programando/ONE - ORACLE Next Education/challenge/conversores - challenge 2/dependenciaJSON/json-20220320.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
