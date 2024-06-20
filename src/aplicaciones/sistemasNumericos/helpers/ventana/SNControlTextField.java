@@ -32,7 +32,6 @@ public class SNControlTextField {
 		controlResultados=new SNRecolectorResultados();
 		controlResultados.setControlCbx(controlCbx);
 		controlResultados.setControlTabla(controlTabla);
-		
 		validador=new SNValidacionTxt();
 		
 		addTxtKeyListener();

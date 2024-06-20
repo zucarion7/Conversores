@@ -1,5 +1,10 @@
 package aplicaciones.tasaCambio.respuestaApis;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+
 import javax.swing.JOptionPane;
 
 import aplicaciones.tasaCambio.helpers.API;
@@ -12,24 +17,40 @@ public class RespuestaApi {
 	private API api_codigoMonedas;
 	private API api_nombreMonedas;
 	private JOptionPanePersonalizador JOPanePers=new JOptionPanePersonalizador();
+	private String URLRates;
+	private String URLDivisas;
 	
 	public RespuestaApi() {
 		consumirApis();
 	}
 	
 	private void consumirApis() {
-		this.api_codigoMonedas=new API("https://api.exchangerate-api.com/v4/latest/COP");
+		Properties p = new Properties();
+		try {
+			p.load(new FileReader("src/config.properties"));
+			URLRates=p.getProperty("ratesAPI");
+			
+			URLDivisas=p.getProperty("divisasAPI");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		
+		this.api_codigoMonedas=new API(URLRates);
 		JOPanePers.Personalizar();
 		JOptionPane.showMessageDialog(null, "Esperar unos segundos respuesta de la API");
 		this.api_codigoMonedas.consumoApi();
 		if(this.api_codigoMonedas.getValidacion()) {
-			api_nombreMonedas=new API("https://openexchangerates.org/api/currencies.json");
+			api_nombreMonedas=new API(URLDivisas);
 			api_nombreMonedas.consumoApi();
 			if(this.api_nombreMonedas.getValidacion()) {
 				controlDatos.setAPICodigos(api_codigoMonedas);
 				controlDatos.setAPINombres(api_nombreMonedas);
 				controlDatos.iniciar();
 			}
+			
 		}
 	}
 

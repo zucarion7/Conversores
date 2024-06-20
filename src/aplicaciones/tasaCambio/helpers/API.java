@@ -33,6 +33,8 @@ import javax.swing.JOptionPane;
 				
 				URL url=new URL(this.urlString);
 				
+				
+				
 				HttpURLConnection conn=(HttpURLConnection) url.openConnection();
 				conn.setRequestMethod("GET");
 				conn.connect();
@@ -48,7 +50,11 @@ import javax.swing.JOptionPane;
 					}
 					scan.close();
 					
-					jsonObject=new JSONObject(informationString.toString());
+					
+					String conversionJSONO=informationString.toString();
+					
+					jsonObject=new JSONObject(conversionJSONO);
+					
 				}
 			}
 			catch(Exception e) {

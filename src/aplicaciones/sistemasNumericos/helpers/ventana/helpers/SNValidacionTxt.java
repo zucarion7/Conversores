@@ -9,6 +9,7 @@ public class SNValidacionTxt {
 
 	
 	public void validarTecla(KeyEvent e,JTextField txtField,String sNumerico) {
+		
 		if(sNumerico.equals("Decimal")) {
 			validacionDecimal(e,txtField);
 		}
@@ -98,6 +99,5 @@ public class SNValidacionTxt {
 		}else {
 			if(e.getKeyChar()=='-' && !txt.equals("")) e.consume();
 		}
-		
 	}
 }
