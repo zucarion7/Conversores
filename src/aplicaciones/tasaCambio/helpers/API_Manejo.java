@@ -19,17 +19,11 @@ public class API_Manejo {
 		ArrayList<Moneda> convertido=new ArrayList<>();
 		for (String key : respuestaCodigos.keySet()) {
 			Moneda moneda=new Moneda();
-			try {
-				moneda.setNombre(respuestaNombres.getString(key));
-				moneda.setCodigo(key);
-				moneda.setValor(new BigDecimal(Double.toString(respuestaCodigos.getDouble(key))));
-				convertido.add(moneda);
+
+			moneda.setNombre(respuestaNombres.getString(key));			moneda.setCodigo(key);
+			moneda.setValor(new BigDecimal(Double.toString(respuestaCodigos.getDouble(key))));
+			convertido.add(moneda);
 			
-//			System.out.println(" codigo: "+moneda.getCodigo()+" valor: "+moneda.getValor()+" nombre:"+respuestaNombres.getString(key));
-			}
-			catch(Exception e) {
-				
-			}
 		}
 		return convertido;
 	}

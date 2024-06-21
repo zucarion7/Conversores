@@ -85,6 +85,10 @@ public class SNValidacionTxt {
 	
 	private void validacionHexadecimal(KeyEvent e,JTextField txtField) {
 		String txt=txtField.getText().toString();
+		if(Pattern.matches("[a-f]", Character.toString(e.getKeyChar()))) {
+			String upper=Character.toString(e.getKeyChar()).toUpperCase();
+			e.setKeyChar(upper.charAt(0));
+		}
 		if(!Character.isDigit(e.getKeyChar()) && !Pattern.matches("[A-F-]",Character.toString(e.getKeyChar()))) e.consume();
 		
 		if(txt.contains("-") && txt.length()==16) {
