@@ -3,7 +3,10 @@ package aplicaciones.sistemasNumericos.helpers.ventana;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import javax.swing.InputMap;
+import javax.swing.JComponent;
 import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 
 import aplicaciones.sistemasNumericos.helpers.ventana.helpers.SNRecolectorResultados;
 import aplicaciones.sistemasNumericos.helpers.ventana.helpers.SNValidacionTxt;
@@ -34,11 +37,20 @@ public class SNControlTextField {
 		controlResultados.setControlTabla(controlTabla);
 		validador=new SNValidacionTxt();
 		
+		eliminarAtajosTeclado();
+		
 		addTxtKeyListener();
 	}
 	
 	public void limpiarTxt() {
 		this.txt.setText("");
+	}
+	
+	private void eliminarAtajosTeclado() {
+		// Eliminar los atajos de teclado para Ctrl+C y Ctrl+V
+        InputMap inputMap = this.txt.getInputMap(JComponent.WHEN_FOCUSED);
+        inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_C, KeyEvent.CTRL_DOWN_MASK), "none");
+        inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, KeyEvent.CTRL_DOWN_MASK), "none");
 	}
 	
 	private void addTxtKeyListener() {
