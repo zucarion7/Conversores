@@ -49,6 +49,9 @@ public class TemperaturaApp{
 		controlCbx.setControlTxt(controlTxt);
 		controlCbx.setControlResultados(controlResultados);
 		
+		controlTabla.setControlTxt(controlTxt);
+		controlTabla.setControlCombobox(controlCbx);
+		
 		controlResultados.setControlCbx(controlCbx);
 		controlResultados.setControlTabla(controlTabla);
 	}

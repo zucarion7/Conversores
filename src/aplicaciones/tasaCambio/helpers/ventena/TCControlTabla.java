@@ -16,6 +16,8 @@ import global_helpers.vista.Tabla;
 public class TCControlTabla {
 
 	private Tabla tabla;
+	private TCControlCbx controlCbx;
+	private TCControlTxt controlTxt;
 	
 	private TCConversion conversor;
 	private JOptionPanePersonalizador JOPanePers;
@@ -23,6 +25,14 @@ public class TCControlTabla {
 	
 	public TCControlTabla(Tabla tabla) {
 		this.tabla=tabla;
+	}
+	
+	public void setControlCombobox(TCControlCbx controlCbx) {
+		this.controlCbx=controlCbx;
+	}
+	
+	public void setControlTxt(TCControlTxt controlTxt) {
+		this.controlTxt=controlTxt;
 	}
 	
 	public void setConversor(TCConversion conver) {
@@ -53,7 +63,6 @@ public class TCControlTabla {
 			tabla.getModelo().setValueAt(monedas.get(i).getNombre(), i, 1);
 			tabla.getModelo().setValueAt(monedas.get(i).getCodigo(), i, 2);
 		}
-//		setResultadoTabla(new BigDecimal(1),3);
 		vaciarResultTabla();
 	}
 	
@@ -83,17 +92,34 @@ public class TCControlTabla {
 				if(e.getClickCount()==2) {
 					JOPanePers.Personalizar();
 					int row=tabla.getSelectedRow();
-					String num=tabla.getValueAt(row, 0).toString();
+					String fila=tabla.getValueAt(row, 0).toString();
 					String nombre=tabla.getValueAt(row, 1).toString();
 					String codigo=tabla.getValueAt(row, 2).toString();
 					String tasa=tabla.getValueAt(row, 3).toString();
 					String resultado=tabla.getValueAt(row, 4).toString();
-					JOptionPane.showMessageDialog(null, "Información de la moneda\n"
-							+ "\nFila: "+num
-							+"\nNombre: "+nombre
+
+					String codigoMI=controlCbx.getCbxBaseString().substring(0, 3);
+					String valorConvert=controlTxt.getBaseValueString();
+					String monedaI="";
+					int posicionMonedaI=0;
+					for(int i=0;i<tabla.getRowCount();i++) {
+						if(codigoMI.equals(tabla.getValueAt(i, 2))) {
+							monedaI=tabla.getValueAt(i, 1).toString();
+							posicionMonedaI=i+1;
+						}
+					};
+					
+					JOptionPane.showMessageDialog(null, "Información de la conversión\n"
+							+"\nPosición moneda inicial: "+posicionMonedaI
+							+"\nNombre moneda inicial: "+monedaI
+							+"\nCódigo: "+codigoMI
+							+"\nCantidad a convertir: "+valorConvert
+							+"\n\nResultados\n"
+							+ "\nFila: "+fila
+							+"\nNombre moneda: "+nombre
 							+"\nCódigo: "+codigo
-							+"\nTasa: "+tasa
-							+"\nResultado: "+resultado,"Moneda",1);
+							+"\nTasa de cambio: "+tasa
+							+"\nResultado: "+resultado,"Tasa de cambio",1);
 				}
 			}
 		});

@@ -72,6 +72,8 @@ public class TasaCambioApp {
 		controlTabla.setConversor(conversor);
 		controlTabla.setFormateador(formateador);
 		controlTabla.setJOPanePers(JOPanePers);
+		controlTabla.setControlTxt(controlTxt);
+		controlTabla.setControlCombobox(controlCbx);
 		
 		controlCbx.setControlLblPos(controlLblPos);
 		controlCbx.setControlTabla(controlTabla);

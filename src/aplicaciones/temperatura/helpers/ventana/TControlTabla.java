@@ -14,12 +14,22 @@ import global_helpers.vista.Tabla;
 public class TControlTabla {
 
 	private Tabla tabla;
+	private TControlCbx controlCbx;
+	private TControlTxt controlTxt;
 	
 	private FormateadorDeNumero formateador;
 	private JOptionPanePersonalizador JOPanePers=new JOptionPanePersonalizador();
 	
 	public TControlTabla(Tabla tabla) {
 		this.tabla=tabla;
+	}
+	
+	public void setControlCombobox(TControlCbx controlCbx) {
+		this.controlCbx=controlCbx;
+	}
+	
+	public void setControlTxt(TControlTxt controlTxt) {
+		this.controlTxt=controlTxt;
 	}
 	
 	public void iniciar() {
@@ -70,17 +80,31 @@ public class TControlTabla {
 					if(e.getClickCount()==2) {
 						JOPanePers.Personalizar();
 						int row=tabla.getSelectedRow();
-						String num=tabla.getValueAt(row, 0).toString();
+						String fila=tabla.getValueAt(row, 0).toString();
 						String escala=tabla.getValueAt(row, 1).toString();
 						String simbolo=tabla.getValueAt(row, 2).toString();
 						String formula=tabla.getValueAt(row, 3).toString();
 						String resultado=tabla.getValueAt(row, 4).toString();
-						JOptionPane.showMessageDialog(null, "Información de la moneda\n"
-								+ "\nFila: "+num
+						
+						String escalaI=controlCbx.getSelectedItemString();
+						String valorConvert=controlTxt.getTxtValueString();
+						String simbolEscI="";
+						for(int i=0;i<tabla.getRowCount();i++) {
+							if(escalaI==tabla.getValueAt(i, 1).toString()) {
+								simbolEscI=tabla.getValueAt(i, 2).toString();
+							}
+						};
+						
+						JOptionPane.showMessageDialog(null, "Información de la conversión\n"
+								+ "\nFila: "+fila
+								+"\nEscala inicial: "+escalaI
+								+"\nSimbolo: "+simbolEscI
+								+"\nCantidad a convertir: "+valorConvert
+								+"\n\nResultados\n"
 								+"\nEscala: "+escala
 								+"\nSimbolo: "+simbolo
-								+"\nFormula: "+formula
-								+"\nResultado: "+resultado,"Escala",1);
+								+"\nFormula empleada: "+formula
+								+"\nResultado: "+resultado,"Temperatura",1);
 					}
 				}
 			});

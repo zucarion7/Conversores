@@ -12,10 +12,20 @@ import global_helpers.vista.Tabla;
 public class SNControlTabla {
 	
 	private Tabla tabla;
+	private SNControlCombobox controlCbx;
+	private SNControlTextField controlTxt;
 	private JOptionPanePersonalizador JOPanePers=new JOptionPanePersonalizador();
 	
 	public SNControlTabla(Tabla tabla) {
 		this.tabla=tabla;
+	}
+	
+	public void setControlCombobox(SNControlCombobox controlCbx) {
+		this.controlCbx=controlCbx;
+	}
+	
+	public void setControlTxt(SNControlTextField controlTxt) {
+		this.controlTxt=controlTxt;
 	}
 	
 	public void iniciar() {
@@ -60,12 +70,26 @@ public class SNControlTabla {
 				if(e.getClickCount()==2) {
 					JOPanePers.Personalizar();
 					int row=tabla.getSelectedRow();
-					String num=tabla.getValueAt(row, 0).toString();
+					String fila=tabla.getValueAt(row, 0).toString();
 					String sistemNumer=tabla.getValueAt(row, 1).toString();
 					String base=tabla.getValueAt(row, 2).toString();
 					String resultado=tabla.getValueAt(row, 3).toString();
-					JOptionPane.showMessageDialog(null, "Información de la moneda\n"
-							+ "\nFila: "+num
+					
+					String SNumericoI=controlCbx.getSelectedItemString();
+					String valorConvert=controlTxt.getValorTxt().isEmpty()?"0":controlTxt.getValorTxt();
+					String SNIBase="";
+					for(int i=0;i<tabla.getRowCount();i++) {
+						if(SNumericoI==tabla.getValueAt(i, 1).toString()) {
+							SNIBase=tabla.getValueAt(i, 2).toString();
+						}
+					};
+					
+					JOptionPane.showMessageDialog(null, "Información de la conversión\n"
+							+ "\nFila: "+fila
+							+"\nSistema numérico inicial: "+SNumericoI
+							+"\nBase: "+SNIBase
+							+"\nCantidad a convertir: "+valorConvert
+							+"\n\nResultados\n"
 							+"\nSistema numérico: "+sistemNumer
 							+"\nBase: "+base
 							+"\nResultado: "+resultado,"Sistema numérico",1);

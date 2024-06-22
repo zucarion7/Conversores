@@ -23,6 +23,10 @@ public class SNControlTextField {
 		this.txt=txt;
 	}
 	
+	public String getValorTxt() {
+		return this.txt.getText();
+	}
+	
 	public void setControlTabla(SNControlTabla ct) {
 		this.controlTabla=ct;
 	}

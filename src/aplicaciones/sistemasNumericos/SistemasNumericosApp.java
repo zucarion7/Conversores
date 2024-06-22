@@ -42,8 +42,10 @@ public class SistemasNumericosApp {
 		controlTxt.setControlCombobox(controlCbx);
 		
 		controlCbx.setControlTabla(controlTabla);
-		
 		controlCbx.setControlTxt(controlTxt);
+		
+		controlTabla.setControlTxt(controlTxt);
+		controlTabla.setControlCombobox(controlCbx);
 		
 	}
 
