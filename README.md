@@ -8,7 +8,7 @@
 
 <h2> Descripción </h2>
 <p>
-  Aplicación que permite elegir entre tres diferentes conversores permitiendo
+  Aplicación que permite elegir entre tres diferentes conversores, obteniendo
   calculos rapidos y precisos
   
   Aunque son conversores parecidos, cada uno realiza su conversión de una manera diferente.
@@ -122,7 +122,7 @@
   - El sistema binario por su parte, esta compuesta por "1" y "0".
   - El sistema octal por su parte, esta compuesto por cifras que van del "0" al "7"
   - Por otro lado, el sistema hexadecimal, debia permitir el acceso de los numeros y letras.
-  (dentro de la aplicación se podran usar las letras "A" "B" "C" "D" "E" "F" en mayuscula)
+  (dentro de la aplicación se podran usar las letras "a" "b" "c" "d" "e" "f" tanto en mayuscula como minuscula)
   
 </p>
 
@@ -133,6 +133,15 @@
   - La aplicación esta construida en el lenguaje java.
   - Se utilizó la libreria javax.swing para la construcción de las interfaces graficas.
   - Clase BigDecimal para realizar los calculos grandes y precisos.
+  - Libreria de jsonObject para lectura de los datos en formato
+    json enviadas por las API consumidas
+</p>
+
+<h2>Ejecutable</h2>
+<p>
+  Antes de terminar, quiero recordar que he dejado un archivo llamado conversores.jar dentro de la carpeta
+  ejecutable. Con este archivo se podra probar la aplicación sin utilizar un IDE, pero si será necesario
+  tener instalado java 17.
 </p>
 
 <h2> Redes </h2>
