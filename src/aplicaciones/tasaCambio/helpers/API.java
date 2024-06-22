@@ -49,7 +49,7 @@ public class API {
 		}
 		catch(Exception e) {
 //			JOPanePers.Personalizar();
-//			JOptionPane.showMessageDialog(null,"Error "+this.urlString+" "+e,"Exception",JOptionPane.ERROR_MESSAGE);
+//			JOptionPane.showMessageDialog(null,"Error "+this.urlString+" "+e,"Excepción",JOptionPane.ERROR_MESSAGE);
 			return false;
 		}
 	}

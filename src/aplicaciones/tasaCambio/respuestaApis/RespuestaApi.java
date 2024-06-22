@@ -1,5 +1,7 @@
 package aplicaciones.tasaCambio.respuestaApis;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,7 +10,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 
 import aplicaciones.tasaCambio.helpers.API;
 import aplicaciones.tasaCambio.helpers.TCDatos;
@@ -53,7 +57,18 @@ public class RespuestaApi {
 	        });
 	        
 	        JOPanePers.Personalizar();
-	        JOptionPane.showMessageDialog(null, "Esperar unos segundos respuesta de la API");
+	        JOptionPane op = new JOptionPane("Esperar unos segundos respuesta de la API"
+	        		,JOptionPane.INFORMATION_MESSAGE);
+	        JDialog dialog = op.createDialog("Aviso");
+	        Timer timer = new Timer(2000, new ActionListener() {
+	            @Override
+	            public void actionPerformed(ActionEvent e) {
+	            	dialog.dispose();
+	            }
+	        });
+	        timer.setRepeats(false);
+	        timer.start();
+	        dialog.setVisible(true);
 	        
 	        try {
 	        	if(!future.get() || !future2.get()) {
@@ -75,9 +90,6 @@ public class RespuestaApi {
 			this.exitoAPIS=false;
 			JOptionPane.showMessageDialog(null,"Error "+e,"Exception",JOptionPane.ERROR_MESSAGE);
 		} catch (IOException e) {
-			this.exitoAPIS=false;
-			JOptionPane.showMessageDialog(null,"Error "+e,"Exception",JOptionPane.ERROR_MESSAGE);
-		}catch(Exception e) {
 			this.exitoAPIS=false;
 			JOptionPane.showMessageDialog(null,"Error "+e,"Exception",JOptionPane.ERROR_MESSAGE);
 		}
