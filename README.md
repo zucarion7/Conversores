@@ -8,7 +8,7 @@
 
 <h2> Descripción </h2>
 <p>
-  Aplicación que permite elegir entre tres diferentes conversores permitiendo
+  Aplicación que permite elegir entre tres diferentes conversores, obteniendo
   calculos rapidos y precisos
   
   Aunque son conversores parecidos, cada uno realiza su conversión de una manera diferente.
@@ -133,6 +133,15 @@
   - La aplicación esta construida en el lenguaje java.
   - Se utilizó la libreria javax.swing para la construcción de las interfaces graficas.
   - Clase BigDecimal para realizar los calculos grandes y precisos.
+  - Libreria de jsonObject para lectura de los datos en formato
+    json enviadas por las API consumidas
+</p>
+
+<h2>Ejecutable</h2>
+<p>
+  Antes de terminar, quiero recordar que he dejado un archivo llamado conversores.jar.
+  Con este archivo se podra probar la aplicación sin utilizar un IDE, pero si será necesario
+  tener instalado java 17.
 </p>
 
 <h2> Redes </h2>
