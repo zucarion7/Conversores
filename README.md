@@ -122,7 +122,7 @@
   - El sistema binario por su parte, esta compuesta por "1" y "0".
   - El sistema octal por su parte, esta compuesto por cifras que van del "0" al "7"
   - Por otro lado, el sistema hexadecimal, debia permitir el acceso de los numeros y letras.
-  (dentro de la aplicación se podran usar las letras "A" "B" "C" "D" "E" "F" en mayuscula)
+  (dentro de la aplicación se podran usar las letras "a" "b" "c" "d" "e" "f" tanto en mayuscula como minuscula)
   
 </p>
 
@@ -139,8 +139,8 @@
 
 <h2>Ejecutable</h2>
 <p>
-  Antes de terminar, quiero recordar que he dejado un archivo llamado conversores.jar.
-  Con este archivo se podra probar la aplicación sin utilizar un IDE, pero si será necesario
+  Antes de terminar, quiero recordar que he dejado un archivo llamado conversores.jar dentro de la carpeta
+  ejecutable. Con este archivo se podra probar la aplicación sin utilizar un IDE, pero si será necesario
   tener instalado java 17.
 </p>
 
